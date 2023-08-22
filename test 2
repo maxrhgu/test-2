@@ -1,0 +1,311 @@
+
+<!DOCTYPE html>
+<html dir="{{direction}}" id="master" class="no-js" ng-app="app" angular-multi-select-mouse-trap angular-multi-select-key-trap>
+<head>
+<meta name="ROBOTS" content="NOINDEX" />
+<meta charset="utf-8" />
+<meta http-equiv="cache-control" content="max-age=0" />
+<meta http-equiv="cache-control" content="no-cache" />
+<meta http-equiv="expires" content="0" />
+<meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+<meta http-equiv="pragma" content="no-cache" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta id="viewport-meta" name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="description" content />
+<meta name="author" content />
+<script src="/cdn-cgi/apps/head/O-36cn4Zt3kLDbeP-3q4QABanTQ.js"></script><link rel="apple-touch-icon" sizes="180x180" href="./images/icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" href="./images/icons/favicon-32x32.png" sizes="32x32" />
+<link rel="icon" type="image/png" href="./images/icons/favicon-16x16.png" sizes="16x16" />
+<link rel="manifest" href="./images/icons/manifest.json" />
+<link rel="mask-icon" href="./images/icons/safari-pinned-tab.svg" color="#2e3e4f" />
+<meta name="theme-color" content="#ffffff" />
+<link rel="stylesheet" href="./vendor-imports/angular_material/1.1.8/angular-material.min.css" />
+<title>Connecteam Launch Pad</title>
+
+<link rel="stylesheet" href="./vendor-imports/animate.css/3.7.2/animate.min.css" />
+<link rel="stylesheet" href="./vendor-imports/jquery-timepicker/1.10.0/jquery.timepicker.css" />
+<style>
+			.hide-on-load {
+				display: none;
+			}
+		</style>
+<script src="./vendor-imports/jquery/3.5.1/jquery-3.5.1.min.js"></script>
+<script src="./vendor-imports/jquery/3.5.1/jquery-migrate-3.3.0.min.js"></script>
+
+<script src="./vendor-imports/moment.js/2.29.1/moment-with-locales.min.js"></script>
+<script src="./vendor-imports/moment-timezone/0.5.43/moment-timezone-with-data.min.js"></script>
+
+
+<script src="./vendor-imports/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="./vendor-imports/jquery-timepicker/1.8.1/jquery.timepicker.min.js"></script>
+<link rel="stylesheet" type="text/css" href="./vendor-imports/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" ng-href="{{bookshelfCssLink}}" />
+<link rel="stylesheet" ng-href="{{mainCssLink}}" />
+<script>
+			function retryDownload(script, url, maxRetries) {
+				if (!maxRetries) {
+					maxRetries = 5;
+				}
+				if (script.retryCount == undefined) {
+					script.retryCount = 0;
+				}
+				if (script.retryCount < maxRetries) {
+					script.retryCount++;
+					setTimeout(function () {
+						script.retryCount++;
+						setTimeout(function () {
+							// Create a new script tag with the same URL and event handler
+							const newScript = document.createElement('script');
+							newScript.src = url;
+							newScript.onerror = function () {
+								retryDownload(newScript, url, maxRetries);
+							};
+							newScript.retryCount = script.retryCount;
+							// Replace the old script tag with the new one in the DOM
+							script.parentNode.replaceChild(newScript, script);
+						}, 2000);
+					});
+				}
+			}
+		</script>
+<script src="./env-config.js"></script>
+<script defer type="text/javascript" onerror="retryDownload(this, &quot;main.cda67de491e4ece98300.js?c16bf24d94e8cdd9a507&quot;, 30)" src="main.cda67de491e4ece98300.js?c16bf24d94e8cdd9a507"></script>
+<script>
+			jQuery.ajax({
+				url: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCyawaL6baWYJB4XUUfEJXfjDxoyfDy5Pw&libraries=places',
+				dataType: 'script',
+				async: true,
+			});
+		</script>
+
+
+<script>
+			window.interdeal = {
+				sitekey: '9f374c0f04d45afa53d65bf313012ef9',
+				Position: document.dir === 'rtl' ? 'Left' : 'Right',
+				Menulang: 'en',
+				noLogs: true,
+				domains: {
+					js: 'https://aacdn.nagich.com/',
+					acc: 'https://access.nagich.com/',
+				},
+			};
+			(function (doc, head, body) {
+				var coreCall = doc.createElement('script');
+				coreCall.src = 'https://aacdn.nagich.com/core/4.4.1/accessibility.js';
+				coreCall.defer = true;
+				coreCall.integrity =
+					'sha512-tq2wb4PBHqpUqBTfTG32Sl7oexERId9xGHX2O3yF91IYLII2OwM1gJVBXGbEPaLmfSQrIE+uAOzNOuEUZHHM+g==';
+				coreCall.crossOrigin = 'anonymous';
+				coreCall.setAttribute('data-cfasync', true);
+				body ? body.appendChild(coreCall) : head.appendChild(coreCall);
+			})(document, document.head, document.body);
+		</script>
+
+<script>
+			try {
+				const script = document.createElement('script');
+				script.src = `https://www.googletagmanager.com/gtag/js?id=${connecteamConfig.ga4.key}`;
+				script.async = true;
+
+				const parent = document.body ? document.body : document.head;
+
+				parent.appendChild(script);
+			} catch (e) {
+				console.error('Failed fetching GA4 gtag script', e);
+			}
+		</script>
+<script>
+			try {
+				window.dataLayer = window.dataLayer || [];
+				function gtag() {
+					dataLayer.push(arguments);
+				}
+				gtag('js', new Date());
+				gtag('config', connecteamConfig.ga4.key);
+			} catch (e) {
+				console.error('Failed initializing GA4', e);
+			}
+		</script>
+<noscript>
+			<iframe src={{"//www.googletagmanager.com/ns.html?id=" + connecteamConfig.googleTagManager.key}} height="0"
+			width="0" style="display: none; visibility: hidden"/>
+		</noscript>
+<script>
+			try {
+				(function (w, d, s, l, i) {
+					w[l] = w[l] || [];
+					w[l].push({
+						'gtm.start': new Date().getTime(),
+						event: 'gtm.js',
+					});
+					var f = d.getElementsByTagName(s)[0],
+						j = d.createElement(s),
+						dl = l != 'dataLayer' ? '&l=' + l : '';
+					j.async = true;
+					j.src = '//www.googletagmanager.com/gtm.js?id=' + i + dl;
+					f.parentNode.insertBefore(j, f);
+				})(window, document, 'script', 'dataLayer', connecteamConfig.googleTagManager.key);
+			} catch (e) {
+				console.error('Failed initializing googleTagManager', e);
+			}
+		</script>
+<script src="cta/cta.js"></script>
+<script src="service-workers/web-push-sw.js"></script>
+<script>
+			try {
+				if (gtag) {
+					if (!connecteamConfig.disableBi) {
+						gtag('get', connecteamConfig.ga4.key, 'client_id', (clientId) => {
+							window.cta.init(connecteamConfig.biUrl, clientId, !connecteamConfig.isProduction);
+						});
+					}
+				} else {
+					if (!connecteamConfig.disableBi) {
+						window.cta.init(connecteamConfig.biUrl, 0, !connecteamConfig.isProduction);
+					}
+				}
+			} catch (e) {
+				console.error('Failed initializing CTA', e);
+			}
+		</script>
+
+<script>
+			function initFullstory() {
+				window['_fs_debug'] = false;
+				window['_fs_host'] = 'fullstory.com';
+				window['_fs_script'] = 'edge.fullstory.com/s/fs.js';
+				window['_fs_org'] = '1Z69G';
+				window['_fs_namespace'] = 'FS';
+				(function (m, n, e, t, l, o, g, y) {
+					if (e in m) {
+						if (m.console && m.console.log) {
+							m.console.log('FullStory namespace conflict. Please set window["_fs_namespace"].');
+						}
+						return;
+					}
+					g = m[e] = function (a, b, s) {
+						g.q ? g.q.push([a, b, s]) : g._api(a, b, s);
+					};
+					g.q = [];
+					o = n.createElement(t);
+					o.async = 1;
+					o.crossOrigin = 'anonymous';
+					o.src = 'https://' + _fs_script;
+					y = n.getElementsByTagName(t)[0];
+					y.parentNode.insertBefore(o, y);
+					g.identify = function (i, v, s) {
+						g(l, { uid: i }, s);
+						if (v) g(l, v, s);
+					};
+					g.setUserVars = function (v, s) {
+						g(l, v, s);
+					};
+					g.event = function (i, v, s) {
+						g('event', { n: i, p: v }, s);
+					};
+					g.anonymize = function () {
+						g.identify(!!0);
+					};
+					g.shutdown = function () {
+						g('rec', !1);
+					};
+					g.restart = function () {
+						g('rec', !0);
+					};
+					g.log = function (a, b) {
+						g('log', [a, b]);
+					};
+					g.consent = function (a) {
+						g('consent', !arguments.length || a);
+					};
+					g.identifyAccount = function (i, v) {
+						o = 'account';
+						v = v || {};
+						v.acctId = i;
+						g(o, v);
+					};
+					g.clearUserCookie = function () {};
+					g.setVars = function (n, p) {
+						g('setVars', [n, p]);
+					};
+					g._w = {};
+					y = 'XMLHttpRequest';
+					g._w[y] = m[y];
+					y = 'fetch';
+					g._w[y] = m[y];
+					if (m[y])
+						m[y] = function () {
+							return g._w[y].apply(this, arguments);
+						};
+					g._v = '1.3.0';
+				})(window, document, window['_fs_namespace'], 'script', 'user');
+			}
+		</script>
+
+<script>
+			try {
+				//Set your APP_ID
+				var APP_ID = connecteamConfig.intercom.key;
+
+				(function () {
+					var w = window;
+					var ic = w.Intercom;
+					if (typeof ic === 'function') {
+						ic('reattach_activator');
+						ic('update', intercomSettings);
+					} else {
+						var d = document;
+						var i = function () {
+							i.c(arguments);
+						};
+						i.q = [];
+						i.c = function (args) {
+							i.q.push(args);
+						};
+						w.Intercom = i;
+
+						function l() {
+							var s = d.createElement('script');
+							s.type = 'text/javascript';
+							s.async = true;
+							s.src = 'https://widget.intercom.io/widget/' + APP_ID;
+							var x = d.getElementsByTagName('script')[0];
+							x.parentNode.insertBefore(s, x);
+						}
+
+						if (w.attachEvent) {
+							w.attachEvent('onload', l);
+						} else {
+							w.addEventListener('load', l, false);
+						}
+					}
+				})();
+			} catch (e) {
+				console.error('Failed initializing Intercom', e);
+			}
+		</script>
+<script>
+			var _hsq = (window._hsq = window._hsq || []);
+			_hsq.push(['setPath', '/index']);
+		</script>
+<style type="text/css">
+			.app-is-loading .modal {
+				display: none !important;
+			}
+
+			.app-is-loading .modal-backdrop {
+				display: none !important;
+			}
+
+			#INDmenu-btn {
+				display: none !important;
+			}
+		</style>
+</head>
+<body id="body"><script>!function(a,b,c,d,e,f){a.ddjskey=e;a.ddoptions=f||null;var m=b.createElement(c),n=b.getElementsByTagName(c)[0];m.async=1,m.src=d,n.parentNode.insertBefore(m,n)}(window,document,"script","https://js.datadome.co/tags.js","382E4AB7CD92F22EFB122DD6708B00", {"ajaxListenerPath": true});</script>
+<r-root-router class="height-100-percent hide-on-load display-initial" />
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8b253dfea2ab4077af8c6f58422dfbfd1689876627854" integrity="sha512-bjgnUKX4azu3dLTVtie9u6TKqgx29RBwfj3QXYt5EKfWM/9hPSAI/4qcV5NACjwAo8UtTeWefx6Zq5PHcMm7Tg==" data-cf-beacon='{"rayId":"7fae6a857a7a249c","token":"05b426105e62432c8d8425fc8a36b9c2","version":"2023.8.0","si":100}' crossorigin="anonymous"></script>
+</body>
+</html>
